@@ -4,11 +4,17 @@
 
 Atom => Molecule => Organism => Template => Page
 
-Atom : Input, Button ...
-Molecule : Card, SearchField ...
-Organism : Navigation ...
-Template : Atom + Molecule + Organism
+Atom : Input, Button ...  
+Molecule : Card, SearchField ...  
+Organism : Navigation ...  
+Template : Atom + Molecule + Organism  
 Page : Add everything
+
+## Todos
+
+1. 코드 개선 : 아토믹 디자인의 장점을 살린 코드
+
+2. 디자인 수정
 
 ## source
 

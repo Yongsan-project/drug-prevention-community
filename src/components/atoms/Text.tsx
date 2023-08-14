@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 interface TextProps {
-  content: string;
+  content: string | string[] | undefined;
   styles?: {
     fontSize: string;
     fontWeight: string;
     color?: string;
+    margin?: string;
   };
 }
 
@@ -14,12 +15,18 @@ const Text = ({ content, styles }: TextProps) => {
 };
 
 const StyledText = styled.p<{
-  $styles?: { fontSize: string; fontWeight: string; color?: string };
+  $styles?: {
+    fontSize: string;
+    fontWeight: string;
+    color?: string;
+    margin?: string;
+  };
 }>`
   font-size: ${(props) => (props.$styles ? props.$styles.fontSize : "15px")};
   font-weight: ${(props) =>
     props.$styles ? props.$styles.fontWeight : "normal"};
   color: ${(props) => (props.$styles ? props.$styles.color : "black")};
+  margin: ${(props) => props.$styles?.margin};
   display: inline-block;
 `;
 

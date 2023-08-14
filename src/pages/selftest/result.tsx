@@ -4,9 +4,30 @@ import ResultTemplate from "@/components/template/SelfTest/result";
 
 const SelfTestResult = () => {
   const router = useRouter();
-  const { score } = router.query;
+  const score = router.query.score as string;
 
-  return <ResultTemplate />;
+  const DescriptionArray = [
+    {
+      score: "0점",
+      desc: "문제없음",
+    },
+    {
+      score: "1~4점",
+      desc: "남용",
+    },
+    {
+      score: "5~14점",
+      desc: "중독",
+    },
+    {
+      score: "14점 이상",
+      desc: "심각한 의존",
+    },
+  ];
+
+  return (
+    <ResultTemplate result={score} scoreCircleContentArray={DescriptionArray} />
+  );
 };
 
 export default withHead(
